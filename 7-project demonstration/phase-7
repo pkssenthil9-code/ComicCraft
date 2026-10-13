@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Comic</title>
+<style>
+body{font-family:Arial;background:#eaf0ff;text-align:center;padding:30px}
+.card{background:white;padding:25px;border-radius:15px;max-width:500px;margin:auto}
+button{background:#34495e;color:white;padding:12px;border:0;border-radius:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>💾 Save Your Comic</h1>
+<p>Download your story and character details as a text file.</p>
+<button onclick="downloadComic()">Download Comic</button>
+<p id="status"></p>
+<a href="phase1.html">Back to Home</a>
+</div>
+<script>
+function downloadComic(){
+let title=localStorage.getItem("comicTitle")||"My Comic";
+let story=localStorage.getItem("comicStory")||"No story entered.";
+let character=localStorage.getItem("comicCharacter")||"Not created";
+let role=localStorage.getItem("characterRole")||"";
+let power=localStorage.getItem("characterPower")||"";
+let content="COMIC CRAFT\n\nTitle: "+title+
+"\n\nStory:\n"+story+
+"\n\nCharacter: "+character+
+"\nRole: "+role+
+"\nPower: "+power;
+let blob=new Blob([content],{type:"text/plain;charset=utf-8"});
+let url=URL.createObjectURL(blob);
+let a=document.createElement("a");
+a.href=url;
+a.download="ComicCraft.txt";
+a.click();
+URL.revokeObjectURL(url);
+document.getElementById("status").textContent="Comic downloaded!";
+}
+</script>
+</body>
+</html>
