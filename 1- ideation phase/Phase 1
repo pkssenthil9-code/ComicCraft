@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComicCraft - Ideation Phase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f0ff;
+      margin: 0;
+      padding: 20px;
+      color: #292044;
+    }
+    .card {
+      max-width: 650px;
+      margin: 25px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    h1 { color: #6d28d9; }
+    h2 { color: #4c1d95; }
+    button {
+      background: #6d28d9;
+      color: white;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #idea { line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎨 ComicCraft</h1>
+    <h2>Phase 1: Ideation Phase</h2>
+
+    <p><b>Project Title:</b> AI Comic Story Creator
+      using Gemini Models</p>
+
+    <h3>Project Idea</h3>
+    <p>ComicCraft is an AI-powered application that
+      helps users create comic stories from text prompts
+      using Gemini AI technology.</p>
+
+    <h3>Objectives</h3>
+    <ul>
+      <li>Generate comic stories from user prompts.</li>
+      <li>Create engaging story scenes.</li>
+      <li>Explore AI-generated comic illustrations.</li>
+      <li>Provide a simple user interface.</li>
+    </ul>
+
+    <h3>Proposed Features</h3>
+    <ul>
+      <li>Text prompt input</li>
+      <li>AI story generation</li>
+      <li>Comic scene presentation</li>
+      <li>Story output display</li>
+    </ul>
+
+    <button onclick="showIdea()">Explore Project Idea</button>
+    <p id="idea"></p>
+  </div>
+
+  <script>
+    function showIdea() {
+      document.getElementById("idea").textContent =
+        "ComicCraft transforms creative text prompts into " +
+        "comic-style stories using AI. Image generation " +
+        "requires a supported AI image service.";
+    }
+  </script>
+</body>
+</html>
