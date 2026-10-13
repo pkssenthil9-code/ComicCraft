@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComicCraft - Project Planning</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #fff7ed;
+      color: #7c2d12;
+    }
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+    }
+    header {
+      background: #c2410c;
+      color: white;
+      padding: 24px;
+      text-align: center;
+      border-radius: 14px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 18px;
+      box-shadow: 0 3px 12px #0001;
+    }
+    .task {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #fed7aa;
+    }
+    .task input {
+      width: 18px;
+      height: 18px;
+    }
+    progress {
+      width: 100%;
+      height: 18px;
+    }
+    .tag {
+      display: inline-block;
+      background: #ffedd5;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 4px;
+    }
+    button {
+      padding: 11px 16px;
+      background: #c2410c;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🎨 ComicCraft</h1>
+      <h2>Phase 4: Project Planning</h2>
+      <p>Plan tasks and track project progress.</p>
+    </header>
+
+    <section class="card">
+      <h2>Development Timeline</h2>
+
+      <label class="task">
+        <input type="checkbox" class="taskCheck">
+        <span>Week 1: Ideation and requirement analysis</span>
+      </label>
+
+      <label class="task">
+        <input type="checkbox" class="taskCheck">
+        <span>Week 2: Project design and UI development</span>
+      </label>
+
+      <label class="task">
+        <input type="checkbox" class="taskCheck">
+        <span>Week 3: Python backend and Gemini integration</span>
+      </label>
+
+      <label class="task">
+        <input type="checkbox" class="taskCheck">
+        <span>Week 4: Testing, documentation and demonstration</span>
+      </label>
+
+      <p id="progressText">Completed: 0 of 4 tasks</p>
+      <progress id="progressBar" value="0" max="4"></progress>
+    </section>
+
+    <section class="card">
+      <h2>Technology Plan</h2>
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Gemini API</span>
+      <span class="tag">GitHub</span>
+    </section>
+
+    <section class="card">
+      <h2>Project Objectives</h2>
+      <ul>
+        <li>Accept a creative text prompt.</li>
+        <li>Generate a comic story using AI.</li>
+        <li>Display the generated story clearly.</li>
+        <li>Explore comic image generation.</li>
+      </ul>
+      <button onclick="showPlan()">View Development Plan</button>
+      <p id="planResult" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script>
+    const tasks = document.querySelectorAll(".taskCheck");
+
+    function updateProgress() {
+      const completed =
+        [...tasks].filter(task => task.checked).length;
+
+      document.getElementById("progressText").textContent =
+        "Completed: " + completed + " of " + tasks.length + " tasks";
+
+      document.getElementById("progressBar").value = completed;
+    }
+
+    tasks.forEach(task =>
+      task.addEventListener("change", updateProgress)
+    );
+
+    function showPlan() {
+      document.getElementById("planResult").textContent =
+        "Plan: Analyze requirements, design the interface, " +
+        "develop the backend, test the application, and prepare the demo.";
+    }
+  </script>
+</body>
+</html>
