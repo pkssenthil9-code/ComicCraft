@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Comic Preview</title>
+<style>
+body{font-family:Arial;background:#fff0df;text-align:center;padding:25px}
+.card{background:white;border:2px solid #333;padding:20px;border-radius:12px;max-width:500px;margin:auto}
+button{padding:12px;background:#d35400;color:white;border:0;border-radius:8px}
+</style>
+</head>
+<body>
+<h1>👀 Comic Preview</h1>
+<div class="card">
+<h2 id="title">Your Comic</h2>
+<h3>Story</h3>
+<p id="story"></p>
+<h3>Character</h3>
+<p id="character"></p>
+</div>
+<br>
+<button onclick="preview()">Load Preview</button>
+<br><br>
+<a href="phase7.html">Next Phase →</a>
+<script>
+function preview(){
+document.getElementById("title").textContent=
+localStorage.getItem("comicTitle")||"Your Comic";
+document.getElementById("story").textContent=
+localStorage.getItem("comicStory")||"No story saved yet.";
+document.getElementById("character").textContent=
+(localStorage.getItem("comicCharacter")||"No character")+
+" - "+(localStorage.getItem("characterRole")||"")+
+" - "+(localStorage.getItem("characterPower")||"");
+}
+</script>
+</body>
+</html>
