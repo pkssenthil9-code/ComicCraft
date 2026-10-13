@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dialogue Writing</title>
+<style>
+body{font-family:Arial;background:#e5fff5;text-align:center;padding:25px}
+input,textarea{padding:12px;margin:10px;width:85%}
+button{background:#16a085;color:white;padding:12px;border:0;border-radius:8px}
+</style>
+</head>
+<body>
+<h1>💬 Dialogue Writing</h1>
+<input id="speaker" placeholder="Character name">
+<textarea id="dialogue" placeholder="Enter character dialogue"></textarea>
+<br>
+<button onclick="addDialogue()">Add Dialogue</button>
+<div id="result"></div>
+<a href="phase6.html">Next Phase →</a>
+<script>
+function addDialogue(){
+let speaker=document.getElementById("speaker").value.trim();
+let dialogue=document.getElementById("dialogue").value.trim();
+if(!speaker||!dialogue){alert("Fill both fields");return;}
+let p=document.createElement("p");
+p.textContent=speaker+": "+dialogue;
+document.getElementById("result").appendChild(p);
+document.getElementById("speaker").value="";
+document.getElementById("dialogue").value="";
+}
+</script>
+</body>
+</html>
